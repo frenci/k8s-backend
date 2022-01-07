@@ -4,7 +4,6 @@ COPY src /tmp/src/
 WORKDIR /tmp/
 RUN mvn package
 FROM openjdk
-MAINTAINER frenci.rama@gmail.com
 EXPOSE 8080
 CMD java -jar /data/quiz-0.0.1-SNAPSHOT.jar
 COPY --from=maven_build /tmp/target/quiz-0.0.1-SNAPSHOT.jar /data/quiz-0.0.1-SNAPSHOT.jar
